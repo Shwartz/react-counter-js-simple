@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import styles from './Counter.module.scss';
 
-const updateCounter = (amount, currentCount, updateCount) => () => updateCount(currentCount + amount);
+export const sum = (amount, currentCount) => amount + currentCount;
+export const updateCounter = (amount, currentCount, updateCount) => () => updateCount(sum(currentCount, amount));
 
 const Button = (props) => {
   const {amount, currentCount, updateCount} = props;
