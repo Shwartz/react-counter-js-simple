@@ -2,24 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {Counter} from "./components/Counter/Counter";
+import CounterAsClass from "./components/CounterAsClass/CounterAsClass";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <Counter/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <CounterAsClass/>
       </header>
     </div>
   );

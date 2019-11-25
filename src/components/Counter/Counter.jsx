@@ -4,16 +4,14 @@ import styles from './Counter.module.scss';
 export const sum = (amount, currentCount) => amount + currentCount;
 export const updateCounter = (amount, currentCount, updateCount) => () => updateCount(sum(currentCount, amount));
 
-const Button = (props) => {
-  const {amount, currentCount, updateCount} = props;
+const Button = ({amount, currentCount, updateCount}) => {
   const operation = amount > 0 ? 'Add' : 'Remove';
 
   return (
     <button
-      className={styles.counter}
-      type="button"
+      className={styles.btn}
       onClick={updateCounter(amount, currentCount, updateCount)}
-    >{operation} {amount}
+      type="button">{operation} {amount}
     </button>
   )
 };
@@ -23,7 +21,7 @@ export const Counter = () => {
 
   return (
     <div>
-      <h3>Example of Counter done by Hooks</h3>
+      <p>React Counter using function and Hooks</p>
       <div>Current Count: {count}</div>
       <Button amount={10} currentCount={count} updateCount={setCount}/>
       <Button amount={-10} currentCount={count} updateCount={setCount}/>
